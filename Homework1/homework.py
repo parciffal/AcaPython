@@ -114,7 +114,7 @@ TASK 7
 էլեմենտները։
 """
 
-def task_7(arr: List, ke):
+def task_7(arr, ke):
     while ke in arr:
         arr.remove(ke)
     return arr
@@ -126,7 +126,7 @@ TASK 8
 էլեմենտների արտադրյալը։
 """
 
-def task_8(arr:List):
+def task_8(arr):
     count = arr[0]
     for i in arr[1:]:
         count *= i
