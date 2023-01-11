@@ -350,7 +350,6 @@ is_lucky(n) = False.
 """
 
 
-
 """
 TASK 21
 Euler function is return a count of numbers not great than N, which are mutualy simple with
