@@ -4,6 +4,9 @@ TASK 1
 համար, վերադարձնել այդ պրոգրեսիայի n֊րդ անդամը։
 """
 
+from webbrowser import get
+
+
 def task_1(first, second, n):
     return second + (n-2)*(second-first)
 
@@ -349,7 +352,30 @@ For n = 239017, the output should be
 is_lucky(n) = False.
 """
 
+def get_len(n):
+    count = 0
+    while n > 0:
+        n //= 10
+        count += 1
+    return count
 
+def get_num(index, n)-> int:
+    for  i in range(0, index):
+        n //= 10
+    return int(n%10)
+
+def task_20(n: int):
+    first = 0
+    second = 0
+    end = get_len(n)-1
+    lnmid = int(get_len(n)/2) 
+    for i in range(0, lnmid):
+        second += get_num(end, n)
+        first += get_num(i, n)
+        end -= 1
+    if second == first:
+        return True
+    return False
 
 """
 TASK 21
@@ -358,7 +384,20 @@ N.
 Example φ(6)=2, as only 1 and 5 from 1,2,3,4,5 are mutually simple with 6. Write a function
 which return count of numbers mutually simple with given N.
 """
-
+def gcd(a, b):
+ 
+    if (a == 0):
+        return b
+    return gcd(b % a, a)
+ 
+def phi(n):
+ 
+    result = 1
+    for i in range(2, n):
+        if (gcd(i, n) == 1):
+            result+=1
+    return result
+            
 """
 TASK 22 *
 You are given a 0-indexed string array words, where words[i] consists of lowercase English
