@@ -4,9 +4,6 @@ TASK 1
 համար, վերադարձնել այդ պրոգրեսիայի n֊րդ անդամը։
 """
 
-from webbrowser import get
-
-
 def task_1(first, second, n):
     return second + (n-2)*(second-first)
 
@@ -235,13 +232,6 @@ def task_13(N:str, x = 0, y = 0):
         x -= 1
     return (x,y)
 
-#x = 0
-#y = 0
-
-#x, y = task_13('up', x, y)
-#x, y = task_13('right', x, y)
-#print(x,' ',y)
-
 """
 TASK 14
 Ստուգեք, արդյոք 2 ցուցակները 1-քայլ ցիկլիկ են:
@@ -360,7 +350,7 @@ def get_len(n):
     return count
 
 def get_num(index, n)-> int:
-    for  i in range(0, index):
+    for  i in range(index):
         n //= 10
     return int(n%10)
 
@@ -440,8 +430,27 @@ Constraints:
 1) 1 &lt;= words.length &lt;= 100
 2) 1 &lt;= words[i].length &lt;= 10
 3) words[i] consists of lowercase English letters.
+
 """
 
+def sort_chars(word):
+    chars  = {}
+
+    for ch in word:
+        if ch in chars:
+            chars[ch] += 1
+        else:
+            chars[ch] = 1
+    return chars
+
+def task_22(words: list):
+    i = 0
+    while i < len(words) - 1:
+        if sort_chars(words[i]) == sort_chars(words[i + 1]):
+            words.remove(words[i + 1])
+            continue
+        i += 1
+    return words
 """
 TASK 23 **
 You are given an array of strings names, and an array heights that consists of distinct
@@ -449,21 +458,29 @@ positive integers. Both arrays are of length n. For each index i, names[i] and h
 denote the name and height of the ith person. Return names sorted in descending
 order by the people&#39;s heights.
 Example 1:
-Input: names = [&quot;Mary&quot;,&quot;John&quot;,&quot;Emma&quot;], heights = [180,165,170]
+EInput: names = [&quot;Mary&quot;,&quot;John&quot;,&quot;Emma&quot;], heights = [180,165,170]
 Output: [&quot;Mary&quot;,&quot;Emma&quot;,&quot;John&quot;]
 Explanation: Mary is the tallest, followed by Emma and John.
-Example 2:
+xample 2:
 Input: names = [&quot;Alice&quot;,&quot;Bob&quot;,&quot;Bob&quot;], heights = [155,185,150]
 Output: [&quot;Bob&quot;,&quot;Alice&quot;,&quot;Bob&quot;]
 Explanation: The first Bob is the tallest, followed by Alice and the second Bob.
 Constraints:
 1) n == names.length == heights.length
-2) 1 &lt;= n &lt;= 10^3
-3) 1 &lt;= names[i].length &lt;= 20
-4) 1 &lt;= heights[i] &lt;= 10^5
-5) names[i] consists of lower and upper case English letters.
+2) 1 <= n <= 10^3
+3) 1 <= names[i].length <= 20
+4) 1 <= heights[i] <= 10^5
+5) names[i] consists of lower and upper case Engl:ish letters.
 6) All the values of heights are distinct.
 """
+
+def task_23(names: list, heights: list):
+    comp = []
+    for i in range(len(names)):
+        comp.append([names[i], heights[i]])
+    comp = sorted(comp, key=lambda x:x[1], reverse=True)
+    comp = [x[0] for x in comp]
+    return comp
 
 """
 TASK 24 ***
@@ -479,8 +496,8 @@ You are given an array of strings votes which is the votes of all voters in the 
 systems. Sort all teams according to the ranking system described above.
 Return a string of all teams sorted by the ranking system.
 Example 1:
-Input: votes = [&quot;ABC&quot;,&quot;ACB&quot;,&quot;ABC&quot;,&quot;ACB&quot;,&quot;ACB&quot;]
-Output: &quot;ACB&quot;
+Input: votes = ["ABC", "ACB","ABC","ACB","ACB"]
+Output: "ACB"
 Explanation:
 Team A was ranked first place by 5 voters. No other team was voted as first place, so team
 A is the first team.
@@ -489,15 +506,15 @@ Team C was ranked second by 3 voters and ranked third by 2 voters.
 As most of the voters ranked C second, team C is the second team, and team B is the third.
 
 Example 2:
-Input: votes = [&quot;WXYZ&quot;,&quot;XYZW&quot;]
-Output: &quot;XWYZ&quot;
+Input: votes = ["WXYZ","XYZW"]
+Output: "XWYZ"
 Explanation:
 X is the winner due to the tie-breaking rule. X has the same votes as W for the first position,
 but X has one vote in the second position, while W does not have any votes in the second
 position.
 Example 3:
-Input: votes = [&quot;ZMNAGUEDSJYLBOPHRQICWFXTVK&quot;]
-Output: &quot;ZMNAGUEDSJYLBOPHRQICWFXTVK&quot;
+Input: votes = ["ZMNAGUEDSJYLBOPHRQICWFXTVK"]
+Output: "ZMNAGUEDSJYLBOPHRQICWFXTVK"
 Explanation: Only one voter, so their votes are used for the ranking.
 Constraints:
 1) 1 &lt;= votes.length &lt;= 1000
@@ -507,3 +524,21 @@ Constraints:
 5) All characters of votes[i] are unique.
 6) All the characters that occur in votes[0] also occur in votes[j] where 1 &lt;= j &lt; votes.length.
 """
+
+def task_24(votes):
+    d = {}
+    rangs = {}
+    for i in range(0,len(votes[0])):
+        rangs[i] = 21**(len(votes[0])-i)
+    for vote in votes:
+        for i, char in enumerate(vote):
+            if char not in d:
+                d[char] = 0
+            d[char] += rangs[i]
+        
+    voted_names = sorted(d.keys())
+    sorted_d = sorted(voted_names, key=lambda x: d[x], reverse=True)
+        
+    return "".join(sorted_d)
+
+
