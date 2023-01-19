@@ -444,10 +444,12 @@ def sort_chars(word):
     return chars
 
 def task_22(words: list):
+    comp = [sort_chars(x) for x in words]
     i = 0
     while i < len(words) - 1:
-        if sort_chars(words[i]) == sort_chars(words[i + 1]):
+        if comp[i] == comp[i + 1]:
             words.remove(words[i + 1])
+            comp.remove(comp[i+1])
             continue
         i += 1
     return words
