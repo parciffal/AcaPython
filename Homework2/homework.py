@@ -192,24 +192,26 @@ class Person():
                        self.__gender,
                        self.__age,
                        self.__address,
-                       [i.name for i in self.__friends],
+                       [i.__name for i in self.__friends],
                        [i._Job__position for i in self.__job]
                        )
 
-    def add_friend(self, value: Person):
-        self.__friends.append(value)
+    def add_friend(self, value: "Person"):
+        if value not in self.__friends:
+            self.__friends.append(value)
 
-    def remove_friend(self, value: Person):
+    def remove_friend(self, value: "Person"):
         self.__friends.remove(value)
 
     def add_job(self, value: Job):
         """
         When Person add job Company employees count should increase by 1.
         """
-        self.__job.append(value)
-        for i in self.__job:
-            if i == value:
-                i.company.add_employee()
+        if value not in self.__job:
+            self.__job.append(value)
+            for i in self.__job:
+                if i == value:
+                    i.company.add_employee()
     
     def remove_job(self, value: Job):
         self.__job.remove(value)
@@ -219,18 +221,23 @@ class Person():
 
     def display_job(self):
         [print(i) for i in self.__job]
-        
-        
 
+    def display_friens(self):
+        [print(i) for i in self.__friends]
+        
+        
+"""
 google = Company("Google", "12.2.1998", 0)
 job = Job(google, 100000, 4, "Developer")
 job1 = Job(google, 200000, 3, "Lector")
 edgar = Person("Edgar", "Khachikyan", True, 23, "Armenia")
 edgar.add_job(job)
 edgar.add_job(job1)
+vardan = Person("Vardan", "Khachikyan", True, 21, "Armenia")
 #edgar.remove_job(job)
-edgar.display_job()
-
+edgar.add_friend(vardan)
+print(edgar)
+"""
 
 """
 Task 7
@@ -270,3 +277,120 @@ Time() and Date() classes are very similar, but Time() is easy, because, in
 Date() we have month with different days, but Time() all are standard, 1min =
 60sec, 1hour = 60minute=3600second
 """
+
+class Date():
+    """
+        Class - Date
+        
+        Data members
+        
+        Year - integer
+        Mounth - integer
+        Day - integer
+        Data methods
+        
+        Constructor - 3 params for init year, mounth, day
+        
+        __repr__ for print Date objet like - day.mount.year
+        
+        Ex. 15.10.1950
+        add_day - add day to given Date object
+        Add_mount - add mount to given Date object
+        Add_year - add year to given Date object
+        
+        __is_leap_year - check year is leap or not
+    """
+    
+    def __init__(self, year: int, mount: int, day: int):
+        self.__year = year
+        self.__mount = mount
+        self.__day = day
+
+    def __repr__(self) -> str:
+        return "{}.{}.{}".format(self.__day, self.__mount, self.__year)
+
+    def add_day(self, day: int):
+        self.__day = day
+
+    def add_mount(self, mount: int):
+        self.__mount = mount
+
+    def add_year(self, year: int):
+        self.__year = year
+
+    def __is_leap_year(self):
+        if self.__year % 4 == 0 and self.__year % 100 == 0 and self.__year % 400 == 0:
+            return "The given year is a leap year"
+        return "It is not a leap year"    
+        
+
+class Time():
+    """
+        Class - Time
+        
+        Data members
+        Hour - int
+        Minute - int
+        Second - int
+        
+        Data methods
+
+        __init__ constructor
+        __repr__
+        1. add_second(s)
+        2. add_minute(m)
+        3. add_hour(h)
+    """
+
+    def __init__(self, hour: int, minute: int, second: int):
+        self.__hour = hour
+        self.__minute = minute
+        self.__second = second
+    
+    def __repr__(self) -> str:
+        return "{}:{}:{}".format(self.__hour, self.__minute, self.__second)
+
+    def add_hour(self, h: int):
+        if self.__hour + h > 24:
+            self.__hour = self.__hour + h - 24
+        else:
+            self.__hour += h
+    
+    def add_minute(self, m: int):
+        k = self.__minute + m
+        if k >= 60: 
+            h = k // 60
+            self.add_hour(h)
+            self.__minute = k - h*60
+        else:
+            self.__minute += m
+
+    def add_second(self, s: int):
+        k = self.__second + s
+        if k >= 60:
+            m = k // 60 
+            self.add_minute(m)
+            self.__second = k - m*60
+        else:
+            self.__second += s
+
+
+    @staticmethod
+    def sum(t1: "Time", t2: "Time"):
+        """
+            Function return t1+t2
+        """
+        t1.add_second(t2.__second)
+        t1.add_minute(t2.__minute)
+        t1.add_hour(t2.__hour)
+
+        return t1
+    
+    def add_time(self, t: "Time"):
+        self.add_second(t.__second)
+        self.add_minute(t.__minute)
+        self.add_hour(t.__hour)
+
+t1 = Time(4, 25, 34)
+t2 = Time(5, 35, 26)
+
