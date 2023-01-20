@@ -391,6 +391,3 @@ class Time():
         self.add_minute(t.__minute)
         self.add_hour(t.__hour)
 
-t1 = Time(4, 25, 34)
-t2 = Time(5, 35, 26)
-
