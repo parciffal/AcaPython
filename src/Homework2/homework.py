@@ -305,8 +305,7 @@ class Date():
     def __init__(self, year: int, mount: int, day: int):
         self.__year = year
         self.__mount = mount
-        self.__day = self.gen_mouthes(mount)
-        
+        self.__day = day if day <= self.gen_mouthes(mount) else self.gen_mouthes(mount)      
     
     def gen_mouthes(self, m):
         mouthes = {
