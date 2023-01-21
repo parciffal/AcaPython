@@ -301,19 +301,44 @@ class Date():
         __is_leap_year - check year is leap or not
     """
     
+
     def __init__(self, year: int, mount: int, day: int):
         self.__year = year
         self.__mount = mount
-        self.__day = day
+        self.__day = self.gen_mouthes(mount)
+        
+    
+    def gen_mouthes(self, m):
+        mouthes = {
+            1: 31,
+            2: 29 if self.__is_leap_year() else 28,
+            3: 30,
+            4: 31,
+            5: 30,
+            6: 31,
+            7: 30,
+            8: 31,
+            9: 30,
+            10: 31,
+            11: 30,
+            12: 31
+            }
+        return mouthes[m]
+
 
     def __repr__(self) -> str:
         return "{}.{}.{}".format(self.__day, self.__mount, self.__year)
 
-    def add_day(self, day: int):
-        self.__day = day
+    def add_day(self, d: int):
 
-    def add_mount(self, mount: int):
-        self.__mount = mount
+        self.__day = d
+
+    def add_mount(self, m: int):
+        if self.__mount + m >= 12: 
+            self.__year += 1
+            self.__mount = 1 if self.__mount + m == 12 else self.__mount + m - 12 
+        else:
+            self.__mount += m
 
     def add_year(self, year: int):
         self.__year = year
