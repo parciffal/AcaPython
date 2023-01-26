@@ -1,4 +1,5 @@
-from .datetimeError import DateError, DayOutOfRangeError, MouthOutOfRangeError, YearOutOfRangeError
+import datetimeError
+
 
 class Date:
     """
@@ -23,12 +24,11 @@ class Date:
         __is_leap_year - check year is leap or not
     """
 
+    def __init__(self, year: int, mouth: int, day: int):
+        self._year = year
+        self._mount = self.check_mouth(mouth)
+        self._day = self.check_day(day)
 
-    def __init__(self, year: int, mouth: int, day: int): 
-        self.__year = year
-        self.__mount = self.check_mouth(mouth)
-        self.__day = self.check_day(day)
-    
     def day_in_mouth(self, m):
         mouthes = {
             1: 31,
@@ -47,50 +47,46 @@ class Date:
         return mouthes[m]
 
     def check_day(self, d):
-        if 0 <= d <= self.day_in_mouth(self.__mount):
+        day_count = self.day_in_mouth(self._mount)
+        if 0 <= d <= day_count:
             return d
         else:
-            raise DayOutOfRangeError(d)
-    
+            raise datetimeError.DayOutOfRangeError(d, day_count)
+
     def check_mouth(self, m):
-        if 1<= m <= 12:
+        if 1 <= m <= 12:
             return m
         else:
-            raise MouthOutOfRangeError(m)
-    
+            raise datetimeError.MouthOutOfRangeError(m)
 
     def __repr__(self) -> str:
-        return "{}.{}.{}".format(self.__day, self.__mount, self.__year)
+        return "{}.{}.{}".format(self._day, self._mount, self._year)
 
     def add_day(self, d: int):
-        if self.__day + d > self.day_in_mouth(self.__mount):
-            delta = self.__day + d  
-            while delta > self.day_in_mouth(self.__mount):
-                delta -= self.day_in_mouth(self.__mount)
+        if self._day + d > self.day_in_mouth(self._mount):
+            delta = self._day + d
+            while delta > self.day_in_mouth(self._mount):
+                delta -= self.day_in_mouth(self._mount)
                 self.add_mount(1)
-            self.__day = delta
+            self._day = delta
         else:
-            self.__day += d
+            self._day += d
 
     def add_mount(self, m: int):
-        if self.__mount + m > 12:
-            delta = self.__mount+m
+        if self._mount + m > 12:
+            delta = self._mount + m
             while delta > 12:
                 delta -= 12
                 self.add_year(1)
-            self.__mount = delta
+            self._mount = delta
         else:
-            self.__mount += m
+            self._mount += m
 
     def add_year(self, year: int):
-        self.__year += year
+        self._year += year
 
     def __is_leap_year(self):
-        if self.__year % 4 == 0 and self.__year % 100 == 0 and self.__year % 400 == 0:
+        if self._year % 4 == 0 and self._year % 100 == 0 and self._year % 400 == 0:
             return "The given year is a leap year"
         return "It is not a leap year"
 
-
-class DateError(Exception):
-    def __init__(self):
-        pass

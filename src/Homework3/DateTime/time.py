@@ -1,3 +1,5 @@
+import datetimeError
+
 class Time:
     """
         Class - Time
@@ -17,15 +19,33 @@ class Time:
     """
 
     def __init__(self, hour: int, minute: int, second: int):
-        self.__hour = hour
-        self.__minute = minute
-        self.__second = second
+        self._hour = self.check_hour(hour)
+        self._minute = self.check_minute(minute)
+        self._second = self.check_second(second)
 
     def __repr__(self) -> str:
         return "{}:{}:{}".format(self.__hour, self.__minute, self.__second)
+    
+    def check_hour(self, h):
+        if 0 <= h < 24:
+            return h
+        else:
+            raise datetimeError.HourOutOfRangeError(h)
+    
+    def check_minute(self, m):
+        if 0 <= m < 60:
+            return m
+        else:
+            raise datetimeError.MinuteOutOfRangeError(m)
+    
+    def check_second(self, s):
+        if 0 <= s < 60:
+            return s
+        else:
+            raise datetimeError.SecondOutOfRangeError(s)
 
     def add_hour(self, h: int):
-        if self.__hour + h > 24:
+        if self.__hour + h > 23:
             self.__hour = self.__hour + h - 24
         else:
             self.__hour += h
@@ -63,3 +83,4 @@ class Time:
         self.add_second(t.__second)
         self.add_minute(t.__minute)
         self.add_hour(t.__hour)
+
