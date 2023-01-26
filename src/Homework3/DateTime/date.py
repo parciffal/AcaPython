@@ -63,19 +63,27 @@ class Date:
         return "{}.{}.{}".format(self.__day, self.__mount, self.__year)
 
     def add_day(self, d: int):
-        current_m_days = self.day_in_mouth(self.__mount)
-        if self.
-        self.__day = d
+        if self.__day + d > self.day_in_mouth(self.__mount):
+            delta = self.__day + d  
+            while delta > self.day_in_mouth(self.__mount):
+                delta -= self.day_in_mouth(self.__mount)
+                self.add_mount(1)
+            self.__day = delta
+        else:
+            self.__day += d
 
     def add_mount(self, m: int):
-        if self.__mount + m >= 12:
-            self.__year += 1 
-            self.__mount = 1 if self.__mount + m == 12 else self.__mount + m - 12
+        if self.__mount + m > 12:
+            delta = self.__mount+m
+            while delta > 12:
+                delta -= 12
+                self.add_year(1)
+            self.__mount = delta
         else:
             self.__mount += m
 
     def add_year(self, year: int):
-        self.__year = year
+        self.__year += year
 
     def __is_leap_year(self):
         if self.__year % 4 == 0 and self.__year % 100 == 0 and self.__year % 400 == 0:
