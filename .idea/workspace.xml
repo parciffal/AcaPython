@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ff6e84f-ef5e-46d8-8ad1-0f86adb177bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Homework3/DateTime/myDatetime.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/date.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/date.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/datetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/datetime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/datetimeError.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/datetimeError.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/date.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/myDate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/datetime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/time.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/DateTime/myTime.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +36,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/parciffal/AcaPython"
+    "last_opened_file_path": "/home/parciffal/AcaPython",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
