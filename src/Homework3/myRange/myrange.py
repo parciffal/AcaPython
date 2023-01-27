@@ -15,9 +15,7 @@ class MyRange:
         3. __iter__
         4. __next__
         5. __len__
-
-        6. __getitem__
-        
+        6. __getitem__ 
         7. __reversed__
     
     """
@@ -97,10 +95,4 @@ class MyRange:
     @step.setter
     def step(self, value: int):
         self.__step = value
-
-
-rang = MyRange(13, 2, -2)
-
-for i in rang:
-    print(i)
 
