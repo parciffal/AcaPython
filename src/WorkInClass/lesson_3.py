@@ -50,8 +50,8 @@ def even_numbers():
     while True:
         yield x
         x += 2
-
-
+m = gen(4)
+print(next(i))
 
 
 

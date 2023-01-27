@@ -58,16 +58,20 @@ class DateTime:
         self.sub_minute(other.__time.minute)
         self.sub_hour(other.__time.hour)
 
-    def get_date(self):
+    @property
+    def date(self):
         return self.__date
 
-    def set_date(self, date: Date):
+    @date.setter
+    def date(self, date: Date):
         self.__date = date
 
-    def get_time(self):
+    @property
+    def time(self):
         return self.__time
 
-    def set_time(self, time: Time):
+    @time.setter
+    def time(self, time: Time):
         self.__time = time
 
     def add_year(self, y: int):
@@ -112,7 +116,7 @@ class DateTime:
         if self.__date.day - d <= 0:
             delta = self.__date.day - d
 
-            while delta < 0:
+            while delta <= 0:
                 c_days = self.__date.day_in_mouth(self.__date.mount)
                 if delta > c_days:
                     delta += c_days

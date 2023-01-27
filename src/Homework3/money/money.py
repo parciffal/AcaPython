@@ -45,6 +45,9 @@ class Money:
         self.__amount = amount
         self.__currency = self.check_currency(currency)
     
+    def __repr__(self) -> str:
+        return "{}: {}".format(self.amount, self.currency)
+
     def __add__(self, other):
         if self.currency == other.currency:
             return self.__class__(self.amount + other.amount, self.currency)

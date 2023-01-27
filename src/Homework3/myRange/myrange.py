@@ -1,30 +1,42 @@
-from myRangeException import StopIterationMy, IndexOutOfRange
+from myRangeException import StopIterationMy, IndexOutOfRange, InvalidInputException
 
 class MyRange:
-    """
-        Class MyRange
-        
-        Data members:
-        1. current
-        2. end
-        3. step
 
-        Data methods:
-        1. __init__
-        2. __repr__
-        3. __iter__
-        4. __next__
-        5. __len__
-        6. __getitem__ 
-        7. __reversed__
+    def __init__(self, current: int, end: int, step: int):
+        if self.check_inputs(current, end, step):
+            self.__current = current
+            self.__end = end
+            self.__step = step
+        else:
+            raise InvalidInputException(current, end, step)
     
-    """
+    def check_inputs(self, current, end, step):
+        if current > end and step > 0:
+            return False
+        if current < end and step < 0:
+            return False
+        if step == 0:
+            return False
+        return True
+    
+    def __call__(self, current: int, end: int, step: int):
+        if not self.check_inputs(current, end, step):
+            raise InvalidInputException(current, end, step)
+        else:
+            arr = []
+            if step >= 0:
+                while current < end:
+                    arr.append(current)
+                    current += step
+                    
+            else:
+                while current > end:
+                    arr.append(current)
+                    current += step
+            return arr
 
-    def __init__(self, end: int,current: int = 0, step: int = 1):
-        self.__current = current
-        self.__end = end
-        self.__step = step
-    
+
+
     def __len__(self):
         return int((self.end - self.current)/self.step)
 
@@ -40,22 +52,23 @@ class MyRange:
        return self
 
     def __next__(self):
-        if self.step < 0 and self.current > self.end:
-            raise StopIteration
+        if self.step < 0:
+            if self.current < self.end:
+                raise StopIteration
         if not hasattr(self, 'iter_value'):
             self.iter_value = self.current
 
             yield self.iter_value
         else:
             if self.step >= 0:
-                while self.iter_value <= self.end:
+                while self.iter_value < self.end:
                     self.iter_value += self.step
-                    if self.iter_value <= self.end:
+                    if self.iter_value < self.end:
                         yield self.iter_value
             else:
-                while self.iter_value >= self.end:
+                while self.iter_value > self.end:
                     self.iter_value += self.step
-                    if self.iter_value >= self.end:
+                    if self.iter_value > self.end:
                         yield self.iter_value
 
             raise StopIterationMy
@@ -95,4 +108,3 @@ class MyRange:
     @step.setter
     def step(self, value: int):
         self.__step = value
-
