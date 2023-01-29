@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ff6e84f-ef5e-46d8-8ad1-0f86adb177bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework2/homework.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework2/homework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/date_time/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/datetimeError.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/date_time/datetimeError.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/myDate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/date_time/my_date.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/myDatetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/date_time/my_datetime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/DateTime/myTime.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/date_time/my_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/City/city.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/city/city.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/City/cityExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/city/cityExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Company/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/company/company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Company/companyExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/company/companyExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Doctor/doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/doctor/doctor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Doctor/doctorException.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/doctor/doctorException.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Job/job.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/job/job.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Job/jobExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/job/jobExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Person/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/person/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Person/personExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/person/personExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Student/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/student/student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Student/studentExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/student/studentExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Teacher/teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/teacher/teacher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/Teacher/teacherExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/teacher/teacherExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/University/university.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/university/university.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/Sociaty/University/universityExceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/sociaty/university/universityExceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/callCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/call_counter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/myRange/myRangeException.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/my_range/myRangeException.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework3/myRange/myrange.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework3/my_range/myrange.py" afterDir="false" />
-    </list>
+    <list default="true" id="3ff6e84f-ef5e-46d8-8ad1-0f86adb177bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +38,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Homework3/date_time/my_date" />
+      <recent name="$PROJECT_DIR$/src/Homework3/date_time/my_time" />
       <recent name="$PROJECT_DIR$/src/WorkInClass/list_abcfactory" />
     </key>
   </component>
