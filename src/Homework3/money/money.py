@@ -1,5 +1,6 @@
-from moneyException import  WrongCurrencyException
+from moneyException import WrongCurrencyException
 from enum import Enum
+
 
 class Currency(Enum):
     AMD = 1
@@ -40,33 +41,32 @@ class Money:
 
     __exchange = {"AMD": 1, "RUB": 5.8, "USD": 400, "EUR": 430}
 
-    
     def __init__(self, amount: int, currency: str):
         self.__amount = amount
         self.__currency = self.check_currency(currency)
-    
+
     def __repr__(self) -> str:
         return "{}: {}".format(self.amount, self.currency)
 
     def __add__(self, other):
         if self.currency == other.currency:
             return self.__class__(self.amount + other.amount, self.currency)
-        amount = (self.convert("AMD") + other.convert("AMD"))/self.exchange[self.currency]
+        amount = (self.convert("AMD") + other.convert("AMD")) / self.exchange[self.currency]
         return self.__class__(int(amount), self.currency)
 
     def __sub__(self, other):
         if self.currency == other.currency:
             return self.__class__(self.amount - other.amount, self.currency)
-        amount = (self.convert("AMD") - other.convert("AMD"))/self.exchange[self.currency]
+        amount = (self.convert("AMD") - other.convert("AMD")) / self.exchange[self.currency]
         return self.__class__(int(amount), self.currency)
-    
+
     def __eq__(self, other: 'Money') -> bool:
         return self.convert("AMD") == other.convert("AMD")
 
     def __ne__(self, other: 'Money') -> bool:
         return not self == other
 
-    def __lt__(self, other: 'Money') -> bool: 
+    def __lt__(self, other: 'Money') -> bool:
         return self.convert("AMD") < other.convert("AMD")
 
     def __le__(self, other: 'Money') -> bool:
@@ -114,12 +114,9 @@ class Money:
     @currency.setter
     def currency(self, value):
         self.__currency = self.check_currency(value)
-    
+
     def convert(self, curr: str = "AMD"):
         if curr.upper() == "AMD":
             return self.amount
         else:
             return self.amount * self.exchange[curr.upper()]
-
-
-

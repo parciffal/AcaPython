@@ -77,27 +77,27 @@ def task_5(filename, n):
 Task 6
 Finish class work, which you started in class.
 Class
-Write class Company
+Write class company
 Data members: company_name, founded_at, employees_count
 Data methods: __init__, __repr__
 
-Write class Job.
-Data members: company(Company type), salary, experience_year, position.
+Write class job.
+Data members: company(company type), salary, experience_year, position.
 Data methods: __init__, __repr__, change_salary, change_experience_year,
 change_postition.
-Write class Person.
+Write class person.
 Data members: name, surname, gender(Male or Female), age, address, friends(list
-of Person type), job(list of Job type)
+of person type), job(list of job type)
 Data methods: __init__, __repr__, add_friend, remove_friend, add_job,
 remove_job, display_job
 Some logics
-When Person add job Company employees count should increase by 1.
-When Person quit the job Company employees count should decrease by 1.
+When person add job company employees count should increase by 1.
+When person quit the job company employees count should decrease by 1.
 You can come up with other logics.
 """
 class Company():
     """
-    Write class Company
+    Write class company
     Data members: company_name, founded_at, employees_count
     Data methods: __init__, __repr__
     """
@@ -123,8 +123,8 @@ class Company():
 
 class Job():
     """
-    Write class Job.
-    Data members: company(Company type), salary, experience_year, position.
+    Write class job.
+    Data members: company(company type), salary, experience_year, position.
     Data methods: __init__, __repr__, change_salary, change_experience_year,
     change_postition.
     """
@@ -136,7 +136,7 @@ class Job():
         self.__position = position
 
     def __repr__(self) -> str:
-        return "Company: {}\n"\
+        return "company: {}\n"\
                "Salary: {}\n"\
                "Experience Year: {}\n"\
                "Position: {}\n".\
@@ -157,11 +157,11 @@ class Job():
 
 class Person():
     """
-    Write class Person.
+    Write class person.
 
     Data members: name, surname, gender(Male or Female),
-                  age, address, friends(list of Person type), 
-                  job(list of Job type)
+                  age, address, friends(list of person type),
+                  job(list of job type)
 
     Data methods: __init__, __repr__, add_friend, remove_friend,
                   add_job, remove_job, display_job
@@ -185,7 +185,7 @@ class Person():
                "Age: {}\n"\
                "Address: {}\n"\
                "Friends: {}\n"\
-               "Job: {}\n"\
+               "job: {}\n"\
                .format(
                        self.__name,
                        self.__surname,
@@ -196,16 +196,16 @@ class Person():
                        [i._Job__position for i in self.__job]
                        )
 
-    def add_friend(self, value: "Person"):
+    def add_friend(self, value: "person"):
         if value not in self.__friends:
             self.__friends.append(value)
 
-    def remove_friend(self, value: "Person"):
+    def remove_friend(self, value: "person"):
         self.__friends.remove(value)
 
     def add_job(self, value: Job):
         """
-        When Person add job Company employees count should increase by 1.
+        When person add job company employees count should increase by 1.
         """
         if value not in self.__job:
             self.__job.append(value)
@@ -227,13 +227,13 @@ class Person():
         
         
 """
-google = Company("Google", "12.2.1998", 0)
-job = Job(google, 100000, 4, "Developer")
-job1 = Job(google, 200000, 3, "Lector")
-edgar = Person("Edgar", "Khachikyan", True, 23, "Armenia")
+google = company("Google", "12.2.1998", 0)
+job = job(google, 100000, 4, "Developer")
+job1 = job(google, 200000, 3, "Lector")
+edgar = person("Edgar", "Khachikyan", True, 23, "Armenia")
 edgar.add_job(job)
 edgar.add_job(job1)
-vardan = Person("Vardan", "Khachikyan", True, 21, "Armenia")
+vardan = person("Vardan", "Khachikyan", True, 21, "Armenia")
 #edgar.remove_job(job)
 edgar.add_friend(vardan)
 print(edgar)
