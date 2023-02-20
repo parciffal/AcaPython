@@ -15,14 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/customer/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/customer/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"customer",
 								""
 							]
@@ -47,14 +44,11 @@
 							"raw": "{\"user\": 1}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/customer/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/customer/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"customer",
 								""
 							],
@@ -79,14 +73,11 @@
 							"raw": "{\n    \"user_id\": 2\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/customer/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/customer/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"customer",
 								"1",
 								""
@@ -101,14 +92,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/customer/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/customer/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"customer",
 								"1",
 								""
@@ -123,14 +111,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/customer/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/customer/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"customer",
 								""
 							],
@@ -155,14 +140,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item_category/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item_category/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item_category",
 								""
 							]
@@ -180,14 +162,11 @@
 							"raw": "{\n    \"name\": \"Item Category Name\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/item_category/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item_category/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item_category",
 								""
 							]
@@ -205,14 +184,11 @@
 							"raw": "{\n    \"name\": \"New name\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/item_category/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item_category/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item_category",
 								"1",
 								""
@@ -227,14 +203,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item_category/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item_category/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item_category",
 								"1",
 								""
@@ -249,14 +222,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item_category/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item_category/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item_category",
 								""
 							],
@@ -281,14 +251,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item",
 								""
 							]
@@ -302,14 +269,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item",
 								""
 							],
@@ -333,14 +297,11 @@
 							"raw": "{\n    \"store_id\": 1,\n    \"category_id\": 5,\n    \"name\": \"Nike\",\n    \"price\": 12354,\n    \"quantity\": 100,\n    \"info\": \"some info\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/item/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item",
 								""
 							]
@@ -358,14 +319,11 @@
 							"raw": "{\n    \"store_id\": 1,\n    \"category_id\": 5,\n    \"name\": \"Nike One\",\n    \"price\": 12354,\n    \"quantity\": 90,\n    \"info\": \"some info\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/item/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item",
 								"1",
 								""
@@ -380,14 +338,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/item/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/item/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"item",
 								"1",
 								""
@@ -407,14 +362,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/store_owner/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store_owner/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store_owner",
 								""
 							]
@@ -435,14 +387,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/store_owner/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store_owner/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store_owner",
 								""
 							],
@@ -466,14 +415,11 @@
 							"raw": "{\n    \"name\": \"Other name\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/store_owner/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store_owner/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store_owner",
 								"1",
 								""
@@ -488,14 +434,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/store_owner/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store_owner/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store_owner",
 								"1",
 								""
@@ -514,14 +457,11 @@
 							"raw": "{\n    \"user_id\": 2\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/store_owner/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store_owner/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store_owner",
 								""
 							]
@@ -540,9 +480,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{store_category}}",
+							"raw": "{{localhost}}api/store_category/",
 							"host": [
-								"{{store_category}}"
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								""
 							]
 						}
 					},
@@ -558,9 +502,13 @@
 							"raw": "{\n    \"name\": \"shoes\"\n}"
 						},
 						"url": {
-							"raw": "{{store_category}}",
+							"raw": "{{localhost}}api/store_category/",
 							"host": [
-								"{{store_category}}"
+								"{{localhost}}api"
+							],
+							"path": [
+								"store_category",
+								""
 							]
 						}
 					},
@@ -576,11 +524,13 @@
 							"raw": "{\n    \"name\": \"Man Shoes\"\n}"
 						},
 						"url": {
-							"raw": "{{store_category}}5/",
+							"raw": "{{localhost}}api/store_category/5/",
 							"host": [
-								"{{store_category}}5"
+								"{{localhost}}api"
 							],
 							"path": [
+								"store_category",
+								"5",
 								""
 							],
 							"query": [
@@ -610,11 +560,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{store_category}}4/",
+							"raw": "{{localhost}}api/store_category/4/",
 							"host": [
-								"{{store_category}}4"
+								"{{localhost}}api"
 							],
 							"path": [
+								"store_category",
+								"4",
 								""
 							]
 						}
@@ -652,14 +604,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/store/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store",
 								""
 							]
@@ -677,14 +626,11 @@
 							"raw": "{\n    \"name\": \"some name\",\n    \"owner_id\": 1,\n    \"store_category_id\": 5\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/store/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store",
 								""
 							]
@@ -698,14 +644,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/store/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store",
 								""
 							],
@@ -725,14 +668,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/store/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store",
 								"1",
 								""
@@ -751,14 +691,11 @@
 							"raw": "{\n    \"name\": \"some name\",\n    \"owner_id\": 1,\n    \"store_category_id\": 1\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/store/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/store/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"store",
 								"1",
 								""
@@ -778,14 +715,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								""
 							]
@@ -803,14 +737,11 @@
 							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": [1,2,3]\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								""
 							]
@@ -824,14 +755,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								""
 							],
@@ -851,14 +779,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								"1",
 								""
@@ -877,14 +802,11 @@
 							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": 'delete', \"ids\": [1,2]}\n}\n"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								"1",
 								""
@@ -903,14 +825,11 @@
 							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": \"add\", \"ids\": [3,4]}\n}\n"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								"1",
 								""
@@ -929,14 +848,11 @@
 							"raw": "{\n    \"customer_id\": 1,\n    \"total_price\": 10000,\n    \"items\": {\"status\": \"clear\"}\n}\n"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/mybug/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/mybug/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"mybug",
 								"1",
 								""
@@ -956,14 +872,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								""
 							]
@@ -981,14 +894,11 @@
 							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": [1,2,3]\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								""
 							]
@@ -1002,14 +912,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/?id=1",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/?id=1",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								""
 							],
@@ -1029,14 +936,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								"1",
 								""
@@ -1055,14 +959,11 @@
 							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"delete\", \"ids\": [2,4]}\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								"1",
 								""
@@ -1081,14 +982,11 @@
 							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"add\", \"ids\": [2,4]}\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								"1",
 								""
@@ -1107,14 +1005,11 @@
 							"raw": "{\n    \"customer_id\": 2,\n    \"total_price\": 123230,\n    \"items\": {\"status\": \"clear\"}\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/purchase/1/",
-							"protocol": "http",
+							"raw": "{{localhost}}api/purchase/1/",
 							"host": [
-								"localhost"
+								"{{localhost}}api"
 							],
-							"port": "8000",
 							"path": [
-								"api",
 								"purchase",
 								"1",
 								""
@@ -1130,6 +1025,10 @@
 		{
 			"key": "store_category",
 			"value": "http://localhost:8000/api/store_category/"
+		},
+		{
+			"key": "localhost",
+			"value": "http://localhost:8000/"
 		}
 	]
 }
