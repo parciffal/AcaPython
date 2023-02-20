@@ -1,7 +1,7 @@
 from typing import Dict
 from datetime import datetime, timedelta
 
-from Exam.task_1.patient.patient import Patient
+from src.Exam.task_1.patient.patient import Patient
 
 
 class Doctor:
