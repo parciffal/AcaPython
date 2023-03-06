@@ -13,4 +13,5 @@ class MyBugSerializer(serializers.ModelSerializer):
         model = MyBug
         fields = ['id', 'custumer', 'items', 'total_price']
 
-    
+    def create(self, validated_data):
+        pass

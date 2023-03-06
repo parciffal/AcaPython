@@ -3,56 +3,42 @@ from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 
 import json
-import jwt
 
 from ..models import TodoModel, UserModel
-
+from ..tools.http_tools import *
+from ..tools.jwt_tools import decode_jwt
 
 class TodoView(View):
-    
-    @staticmethod
-    def data_status(data):
-        return HttpResponse(
-            json.dumps({"data": data, "status": "ok"}),
-            content_type="application/json"
-        )
-
-    @staticmethod
-    def ok_status():
-        return HttpResponse(
-            json.dumps({"status": "ok"}),
-            status = 200,
-            content_type="application/json"
-        )
-    
-
+   
     def get(self, request):
-        token = request.META.get("HTTP_AUTHORIZATION").split()[1]
-        user_info = jwt.decode(token, "SECRET_KEY", algorithms=['HS256'])
+        user_info = decode_jwt(request)
+        
         user = UserModel.objects.get(id=int(user_info['user_id']))
         todos = TodoModel.objects.filter(user=user).all()
+    
         data = []
         for todo in todos:
             data.append(todo.as_json())
 
-        return self.data_status(data)
+        return data_status(data)
 
     def post(self, request):
-        token = request.META.get("HTTP_AUTHORIZATION").split()[1]
-        user_info = jwt.decode(token, "SECRET_KEY", algorithms=['HS256'])
+        user_info = decode_jwt(request)
         user = UserModel.objects.get(id=int(user_info['user_id']))
+        
         data = json.loads(request.body)
+        
         todo = TodoModel.objects.create(
             user=user,
             text=data['text'],
             is_active=data['is_active'])
+        
         todo.save()
-        return self.ok_status()
+        return ok_status()
 
     @staticmethod
     def check_view(request, id):
-        token = request.META.get("HTTP_AUTHORIZATION").split()[1]
-        user_info = jwt.decode(token, "SECRET_KEY", algorithms=['HS256'])
+        user_info = decode_jwt(request)
         try:
             user = UserModel.objects.get(id=int(user_info['user_id']))
         except:
@@ -72,7 +58,8 @@ class TodoView(View):
         except ObjectDoesNotExist:
             return HttpResponse({"status": "obj_not_found"})
         todo.delete()
-        return TodoView.ok_status()
+        
+        return ok_status()
 
     @staticmethod
     def get_single(request, id):
@@ -80,7 +67,8 @@ class TodoView(View):
             todo = TodoModel.objects.get(id=id)
         except ObjectDoesNotExist:
             return HttpResponse({"status": "obj_not_found"})
-        return TodoView.data_status(todo.as_json())
+        
+        return data_status(todo.as_json())
 
     @staticmethod
     def edit(request, id):
@@ -96,6 +84,6 @@ class TodoView(View):
             item.is_active = data['is_active']
             item.save()
         
-        return TodoView.ok_status()    
+        return ok_status()    
         
 

@@ -1,2 +1,0 @@
-1) HyperlinkedModelSerializer u ModelSerializer tarberutyun@
-2)

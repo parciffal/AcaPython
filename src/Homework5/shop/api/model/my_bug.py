@@ -12,9 +12,10 @@ class MyBug(models.Model):
         return self.custumer.user.get_username()
 
     def as_json(self):
+
         data = {
             "id": self.id,
-            "custumer": self.custumer.as_json(),
+            "custumer": self.custumer.as_json()['name'],
             "items": str([i.as_json() for i in self.items.all()]),
             "total_price": self.total_price
         }

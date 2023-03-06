@@ -1,9 +1,8 @@
+#
 from django.db import models
+
+#
 from .user_model import UserModel
-from django.utils.datetime_safe import datetime
-
-import json
-
 
 class TodoModel(models.Model):
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE)

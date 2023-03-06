@@ -6,3 +6,4 @@ from .purchase_view import PurchaseView
 from .store_category_view import StoreCategoryView
 from .store_owner_view import StoreOwnerView
 from .store_view import StoreView
+from .task_view import TaskView

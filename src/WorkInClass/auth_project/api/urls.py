@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 
 from .views import UserAuthView, TodoView
@@ -10,5 +9,5 @@ urlpatterns = [
     path('auth/login', UserAuthView.login),
     path('auth/logout', UserAuthView.logout),
     path('auth/info', UserAuthView.user_info),
-    
+    path('auth/activate', UserAuthView.activate),
 ]

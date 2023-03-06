@@ -16,5 +16,7 @@ router.register(r'mybug', MyBugView, basename='mybug')
 router.register(r'purchase', PurchaseView, basename='purchase')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('mail', TaskView.mail),
+    path('', include(router.urls)),
+    
 ]
