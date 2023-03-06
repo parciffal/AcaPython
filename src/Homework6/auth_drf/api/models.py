@@ -48,6 +48,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     updated_at = models.DateTimeField(auto_now=True)
 
+    verify_code = models.CharField(max_length=255, unique=True)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
